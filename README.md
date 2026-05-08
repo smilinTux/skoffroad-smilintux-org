@@ -1,6 +1,6 @@
-# skoffroad-smilintux-org
+# skoffroad-skworld-io
 
-Source for the official site at **[skoffroad.smilintux.org](https://skoffroad.smilintux.org)**.
+Source for the official site at **[skoffroad.skworld.io](https://skoffroad.skworld.io)**.
 
 Static single-page site (HTML/CSS/JS, no build step) served via GitHub Pages.
 
@@ -23,7 +23,7 @@ python3 -m http.server 8080
 
 ## DNS (Cloudflare)
 
-A `CNAME` on the `smilintux.org` zone:
+A `CNAME` on the `skworld.io` zone:
 
 ```
 skoffroad   CNAME   smilintux.github.io   (DNS-only / gray cloud)
