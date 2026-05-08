@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>skoffroad — get muddy. (an open-source off-road sandbox)</title>
+<meta name="description" content="skoffroad is a free, open-source off-road sandbox built in Rust with Bevy and Avian3D. Procedural terrain, raycast suspension, weather, mud, ramps, and 44 plugins of chaos." />
+<meta property="og:title" content="skoffroad" />
+<meta property="og:description" content="A free, open-source off-road sandbox built in Rust." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://skoffroad.skworld.io" />
+<meta name="theme-color" content="#0c0a09" />
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav">
+  <a href="#" class="brand">
+    <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+      <circle cx="24" cy="24" r="22" fill="#0c0a09" stroke="#f59e0b" stroke-width="3"/>
+      <circle cx="24" cy="24" r="10" fill="#f59e0b"/>
+      <circle cx="24" cy="24" r="4" fill="#0c0a09"/>
+      <g stroke="#f59e0b" stroke-width="3" stroke-linecap="round">
+        <line x1="24" y1="4" x2="24" y2="10"/>
+        <line x1="24" y1="38" x2="24" y2="44"/>
+        <line x1="4" y1="24" x2="10" y2="24"/>
+        <line x1="38" y1="24" x2="44" y2="24"/>
+      </g>
+    </svg>
+    <span class="brand-name">SKOFFROAD</span>
+  </a>
+  <nav class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#stack">Stack</a>
+    <a href="#stats">Stats</a>
+    <a href="#play">Play</a>
+    <a class="nav-cta" href="https://github.com/smilinTux/skoffroad" target="_blank" rel="noopener">GitHub ↗</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-sky" aria-hidden="true"></div>
+  <div class="hero-mountains" aria-hidden="true">
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+      <path d="M0,200 L120,140 L240,180 L360,90 L480,160 L600,100 L720,170 L840,80 L960,150 L1080,110 L1200,180 L1320,130 L1440,170 L1440,320 L0,320 Z" fill="#3a2a1c"/>
+    </svg>
+  </div>
+  <div class="hero-mountains hero-mountains-near" aria-hidden="true">
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+      <path d="M0,260 L100,200 L200,240 L320,160 L440,220 L560,180 L680,240 L800,170 L920,220 L1040,190 L1160,240 L1280,200 L1400,230 L1440,210 L1440,320 L0,320 Z" fill="#1f1409"/>
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <span class="eyebrow">v0.7.0 · open source · GPL-3.0</span>
+    <h1 class="hero-title">
+      <span class="word">GET</span>
+      <span class="word">MUDDY.</span>
+    </h1>
+    <p class="hero-tagline">
+      A free, open-source off-road sandbox in <span class="rust">Rust</span> &mdash;
+      procedural terrain, raycast suspension, weather, mud, ramps, and 44 plugins of glorious chaos.
+    </p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="https://github.com/smilinTux/skoffroad" target="_blank" rel="noopener">
+        Source on GitHub
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="btn btn-ghost" href="#play">How to play</a>
+    </div>
+    <div class="hero-meta">
+      <span><strong>~12,000</strong> lines of Rust</span>
+      <span class="dot">·</span>
+      <span><strong>44</strong> plugins</span>
+      <span class="dot">·</span>
+      <span><strong>40+</strong> sprints shipped</span>
+    </div>
+  </div>
+
+  <div class="hero-jeep" aria-hidden="true">
+    <svg viewBox="0 0 240 140">
+      <!-- body -->
+      <rect x="30" y="55" width="170" height="40" rx="4" fill="#d97706"/>
+      <rect x="40" y="38" width="100" height="22" rx="3" fill="#d97706"/>
+      <!-- windshield -->
+      <polygon points="42,40 138,40 132,58 48,58" fill="#0c0a09" opacity="0.6"/>
+      <!-- grille lines -->
+      <g stroke="#0c0a09" stroke-width="2">
+        <line x1="190" y1="62" x2="200" y2="62"/>
+        <line x1="190" y1="68" x2="200" y2="68"/>
+        <line x1="190" y1="74" x2="200" y2="74"/>
+        <line x1="190" y1="80" x2="200" y2="80"/>
+      </g>
+      <!-- headlights -->
+      <circle cx="195" cy="68" r="4" fill="#fef3c7"/>
+      <circle cx="195" cy="80" r="4" fill="#fef3c7"/>
+      <!-- wheel wells -->
+      <rect x="40" y="80" width="50" height="20" fill="#0c0a09"/>
+      <rect x="140" y="80" width="50" height="20" fill="#0c0a09"/>
+      <!-- tires -->
+      <g class="tire tire-rear">
+        <circle cx="65" cy="100" r="22" fill="#0c0a09"/>
+        <circle cx="65" cy="100" r="10" fill="#3f3f46"/>
+        <g stroke="#0c0a09" stroke-width="2">
+          <line x1="65" y1="78" x2="65" y2="86"/>
+          <line x1="65" y1="114" x2="65" y2="122"/>
+          <line x1="43" y1="100" x2="51" y2="100"/>
+          <line x1="79" y1="100" x2="87" y2="100"/>
+        </g>
+      </g>
+      <g class="tire tire-front">
+        <circle cx="165" cy="100" r="22" fill="#0c0a09"/>
+        <circle cx="165" cy="100" r="10" fill="#3f3f46"/>
+        <g stroke="#0c0a09" stroke-width="2">
+          <line x1="165" y1="78" x2="165" y2="86"/>
+          <line x1="165" y1="114" x2="165" y2="122"/>
+          <line x1="143" y1="100" x2="151" y2="100"/>
+          <line x1="179" y1="100" x2="187" y2="100"/>
+        </g>
+      </g>
+      <!-- light bar -->
+      <rect x="60" y="32" width="80" height="6" rx="2" fill="#0c0a09"/>
+      <circle cx="75" cy="35" r="2" fill="#fef3c7"/>
+      <circle cx="90" cy="35" r="2" fill="#fef3c7"/>
+      <circle cx="105" cy="35" r="2" fill="#fef3c7"/>
+      <circle cx="120" cy="35" r="2" fill="#fef3c7"/>
+    </svg>
+    <div class="dust" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <div class="mud-splat splat-1" aria-hidden="true"></div>
+  <div class="mud-splat splat-2" aria-hidden="true"></div>
+</section>
+
+<section id="features" class="section section-features">
+  <div class="section-head">
+    <span class="kicker">/01 · what's in the box</span>
+    <h2>Everything an off-road sandbox should have.</h2>
+    <p>Built from scratch in pure Rust on Bevy 0.18 + Avian3D 0.6. No engine licenses. No DRM. Just code you can read.</p>
+  </div>
+  <div class="feature-grid">
+    <article class="feature">
+      <div class="feature-icon" aria-hidden="true">🏔️</div>
+      <h3>Procedural terrain</h3>
+      <p>Heightmap noise, scattered rocks, ramps, trampolines, water, and a full day/night cycle.</p>
+    </article>
+    <article class="feature">
+      <div class="feature-icon" aria-hidden="true">🛞</div>
+      <h3>Raycast suspension</h3>
+      <p>Per-wheel raycasts with spring/damper forces. Articulation, tire squash, mud, ruts, and skidmarks.</p>
+    </article>
+    <article class="feature">
+      <div class="feature-icon" aria-hidden="true">⚙️</div>
+      <h3>Drivetrain realism</h3>
+      <p>Engine torque curves, 4WD, low-range, diff lock, airdown, winch, fuel, and a working V8 bay.</p>
+    </article>
+    <article class="feature">
+      <div class="feature-icon" aria-hidden="true">🌧️</div>
+      <h3>Weather forces</h3>
+      <p>Wind that pushes the chassis, rain, mud puddles, splashes, slip smoke, and impact flashes.</p>
+    </article>
+    <article class="feature">
+      <div class="feature-icon" aria-hidden="true">📸</div>
+      <h3>Photo mode + replay</h3>
+      <p>Pause physics, hide the cursor, and snap. Or rewind the last 10 seconds as a translucent ghost.</p>
+    </article>
+    <article class="feature">
+      <div class="feature-icon" aria-hidden="true">🧪</div>
+      <h3>Headless harness</h3>
+      <p>A <code>sim</code> binary that steps Avian without a window, with JSON output for CI regressions.</p>
+    </article>
+    <article class="feature">
+      <div class="feature-icon" aria-hidden="true">🎮</div>
+      <h3>5 camera modes</h3>
+      <p>Chase, cockpit, wheel-cam, and orbit. Q/E to swing around. V to cycle.</p>
+    </article>
+    <article class="feature">
+      <div class="feature-icon" aria-hidden="true">🏁</div>
+      <h3>Trials &amp; stunts</h3>
+      <p>Time trials, drift, nitro, trailers, stunt scoring, ramp arrows, achievements, and XP.</p>
+    </article>
+    <article class="feature">
+      <div class="feature-icon" aria-hidden="true">💾</div>
+      <h3>Save anywhere</h3>
+      <p>Three save slots, auto-save on exit, auto-load on launch. Settings persist between sessions.</p>
+    </article>
+  </div>
+</section>
+
+<section id="stack" class="section section-stack">
+  <div class="section-head">
+    <span class="kicker">/02 · the stack</span>
+    <h2>Pure Rust. No middleware tax.</h2>
+    <p>Every line of the engine is open. Audit it, fork it, mod it.</p>
+  </div>
+  <div class="stack-grid">
+    <div class="stack-card"><span class="stack-version">0.18.1</span><strong>Bevy</strong><span>ECS engine</span></div>
+    <div class="stack-card"><span class="stack-version">0.6.1</span><strong>Avian3D</strong><span>Physics</span></div>
+    <div class="stack-card"><span class="stack-version">0.18.0</span><strong>bevy_hanabi</strong><span>GPU particles</span></div>
+    <div class="stack-card"><span class="stack-version">0.25.0</span><strong>bevy_kira_audio</strong><span>Procedural audio</span></div>
+    <div class="stack-card"><span class="stack-version">0.9.0</span><strong>noise</strong><span>Heightmaps</span></div>
+    <div class="stack-card"><span class="stack-version">1.x</span><strong>serde</strong><span>Save files</span></div>
+  </div>
+</section>
+
+<section id="stats" class="section section-stats">
+  <div class="stats-grid">
+    <div class="stat">
+      <span class="stat-number" data-target="12000">12,000</span>
+      <span class="stat-label">lines of Rust</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number" data-target="44">44</span>
+      <span class="stat-label">plugins</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number" data-target="40">40+</span>
+      <span class="stat-label">sprints shipped</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number" data-target="0">$0</span>
+      <span class="stat-label">to play, forever</span>
+    </div>
+  </div>
+</section>
+
+<section id="play" class="section section-play">
+  <div class="section-head">
+    <span class="kicker">/03 · how to play</span>
+    <h2>Three commands. Zero friction.</h2>
+    <p>If you've got Rust installed, you're 60 seconds from mud-flinging.</p>
+  </div>
+  <div class="code-block" role="region" aria-label="Quickstart commands">
+    <div class="code-head">
+      <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+      <span class="code-title">~/skoffroad</span>
+    </div>
+    <pre><code><span class="c">$</span> git clone https://github.com/smilinTux/skoffroad.git
+<span class="c">$</span> cd skoffroad
+<span class="c">$</span> cargo run --release
+   <span class="cm"># building... ☕</span>
+   <span class="cm"># 🚙 vroom.</span></code></pre>
+  </div>
+
+  <div class="controls">
+    <h3>The first 30 seconds</h3>
+    <ul class="key-grid">
+      <li><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd><span>Drive</span></li>
+      <li><kbd>Space</kbd><span>Brake</span></li>
+      <li><kbd>R</kbd><span>Reset</span></li>
+      <li><kbd>J</kbd><span>Auto-flip</span></li>
+      <li><kbd>V</kbd><span>Cycle camera</span></li>
+      <li><kbd>P</kbd><span>Photo mode</span></li>
+      <li><kbd>.</kbd><span>Replay last 10s</span></li>
+      <li><kbd>?</kbd><span>Full key reference</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section-cta">
+  <div class="cta-card">
+    <h2>Fork it. Mod it. Make it yours.</h2>
+    <p>GPL-3.0-or-later. Every commit, every plugin, every line — yours to study and remix.</p>
+    <div class="cta-buttons">
+      <a class="btn btn-primary" href="https://github.com/smilinTux/skoffroad" target="_blank" rel="noopener">Get the source</a>
+      <a class="btn btn-ghost" href="https://github.com/smilinTux/skoffroad/issues" target="_blank" rel="noopener">Open issues</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <strong>SKOFFROAD</strong>
+      <span>An open-source off-road sandbox.</span>
+    </div>
+    <nav class="footer-links">
+      <a href="https://github.com/smilinTux/skoffroad" target="_blank" rel="noopener">Game repo</a>
+      <a href="https://github.com/smilinTux/skoffroad-skworld-io" target="_blank" rel="noopener">Site repo</a>
+      <a href="https://github.com/smilinTux/skoffroad/blob/main/LICENSE" target="_blank" rel="noopener">GPL-3.0</a>
+      <a href="https://github.com/smilinTux/skoffroad/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog</a>
+    </nav>
+    <div class="footer-meta">
+      <span>© <a href="https://github.com/smilinTux" target="_blank" rel="noopener">smilinTux</a> · made with mud and Rust</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
