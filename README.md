@@ -1,6 +1,6 @@
-# skoffroad-skworld-io
+# skoffroad-smilintux-org
 
-Source for the official site at **[skoffroad.skworld.io](https://skoffroad.skworld.io)**.
+Source for the official site at **[skoffroad.smilintux.org](https://skoffroad.smilintux.org)**.
 
 Static single-page site (HTML/CSS/JS, no build step) served via GitHub Pages.
 
@@ -21,15 +21,15 @@ python3 -m http.server 8080
 | `CNAME`      | GitHub Pages custom domain |
 | `assets/`    | Favicon + future SVGs |
 
-## DNS
+## DNS (Cloudflare)
 
-For the custom domain to work, add a `CNAME` record at the DNS provider:
+A `CNAME` on the `smilintux.org` zone:
 
 ```
-skoffroad.skworld.io.   CNAME   smilintux.github.io.
+skoffroad   CNAME   smilintux.github.io   (DNS-only / gray cloud)
 ```
 
-GitHub Pages serves with HTTPS automatically once DNS resolves.
+GitHub Pages provisions HTTPS automatically once DNS resolves.
 
 ## License
 
