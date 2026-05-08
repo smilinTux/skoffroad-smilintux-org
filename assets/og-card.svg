@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a0f08"/>
+      <stop offset="40%" stop-color="#3a1f0a"/>
+      <stop offset="75%" stop-color="#7c2d12"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1f1409"/>
+      <stop offset="100%" stop-color="#0c0a09"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0.78" cy="0.72" r="0.18">
+      <stop offset="0%" stop-color="#fef3c7" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#f59e0b" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3"/>
+      <feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.06 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+  </defs>
+
+  <!-- background -->
+  <rect width="1200" height="630" fill="#0c0a09"/>
+
+  <!-- sky band -->
+  <rect width="1200" height="430" fill="url(#sky)"/>
+
+  <!-- sun glow -->
+  <rect width="1200" height="630" fill="url(#sun)"/>
+
+  <!-- far mountains -->
+  <path d="M0,360 L100,280 L200,320 L300,200 L400,290 L500,220 L600,310 L700,180 L800,270 L900,210 L1000,310 L1100,240 L1200,300 L1200,430 L0,430 Z" fill="#3a2a1c" opacity="0.85"/>
+
+  <!-- near mountains -->
+  <path d="M0,420 L80,360 L180,400 L290,300 L400,380 L520,330 L640,400 L760,310 L880,380 L1000,340 L1120,400 L1200,370 L1200,430 L0,430 Z" fill="#1f1409"/>
+
+  <!-- ground -->
+  <rect y="430" width="1200" height="200" fill="url(#ground)"/>
+
+  <!-- skidmarks -->
+  <g stroke="#1a0f08" stroke-width="3" opacity="0.6" fill="none" stroke-linecap="round">
+    <path d="M820,560 Q900,540 1020,555"/>
+    <path d="M820,575 Q900,555 1020,570"/>
+  </g>
+
+  <!-- mud splats -->
+  <g fill="#3a2a1c" opacity="0.7">
+    <circle cx="80" cy="500" r="14"/>
+    <circle cx="110" cy="490" r="6"/>
+    <circle cx="95" cy="520" r="4"/>
+    <circle cx="1100" cy="480" r="10"/>
+    <circle cx="1130" cy="495" r="5"/>
+  </g>
+
+  <!-- jeep (right side, scaled up from favicon style) -->
+  <g transform="translate(820, 380) scale(1.6)">
+    <!-- light bar -->
+    <rect x="60" y="32" width="80" height="6" rx="2" fill="#0c0a09"/>
+    <circle cx="75" cy="35" r="2" fill="#fef3c7"/>
+    <circle cx="90" cy="35" r="2" fill="#fef3c7"/>
+    <circle cx="105" cy="35" r="2" fill="#fef3c7"/>
+    <circle cx="120" cy="35" r="2" fill="#fef3c7"/>
+    <!-- body -->
+    <rect x="30" y="55" width="170" height="40" rx="4" fill="#d97706"/>
+    <rect x="40" y="38" width="100" height="22" rx="3" fill="#d97706"/>
+    <!-- windshield -->
+    <polygon points="42,40 138,40 132,58 48,58" fill="#0c0a09" opacity="0.6"/>
+    <!-- grille -->
+    <g stroke="#0c0a09" stroke-width="2">
+      <line x1="190" y1="62" x2="200" y2="62"/>
+      <line x1="190" y1="68" x2="200" y2="68"/>
+      <line x1="190" y1="74" x2="200" y2="74"/>
+      <line x1="190" y1="80" x2="200" y2="80"/>
+    </g>
+    <!-- headlights -->
+    <circle cx="195" cy="68" r="4" fill="#fef3c7"/>
+    <circle cx="195" cy="80" r="4" fill="#fef3c7"/>
+    <!-- wheel wells -->
+    <rect x="40" y="80" width="50" height="20" fill="#0c0a09"/>
+    <rect x="140" y="80" width="50" height="20" fill="#0c0a09"/>
+    <!-- tires -->
+    <g>
+      <circle cx="65" cy="100" r="22" fill="#0c0a09"/>
+      <circle cx="65" cy="100" r="10" fill="#3f3f46"/>
+      <g stroke="#0c0a09" stroke-width="2">
+        <line x1="65" y1="78" x2="65" y2="86"/>
+        <line x1="65" y1="114" x2="65" y2="122"/>
+        <line x1="43" y1="100" x2="51" y2="100"/>
+        <line x1="79" y1="100" x2="87" y2="100"/>
+      </g>
+    </g>
+    <g>
+      <circle cx="165" cy="100" r="22" fill="#0c0a09"/>
+      <circle cx="165" cy="100" r="10" fill="#3f3f46"/>
+      <g stroke="#0c0a09" stroke-width="2">
+        <line x1="165" y1="78" x2="165" y2="86"/>
+        <line x1="165" y1="114" x2="165" y2="122"/>
+        <line x1="143" y1="100" x2="151" y2="100"/>
+        <line x1="179" y1="100" x2="187" y2="100"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- dust kicked up behind jeep -->
+  <g fill="#3a2a1c" opacity="0.5">
+    <circle cx="780" cy="540" r="18"/>
+    <circle cx="745" cy="525" r="14"/>
+    <circle cx="710" cy="535" r="10"/>
+    <circle cx="680" cy="545" r="7"/>
+  </g>
+
+  <!-- brand mark (top left) -->
+  <g transform="translate(70, 70)">
+    <circle cx="24" cy="24" r="22" fill="#0c0a09" stroke="#f59e0b" stroke-width="3"/>
+    <circle cx="24" cy="24" r="10" fill="#f59e0b"/>
+    <circle cx="24" cy="24" r="4" fill="#0c0a09"/>
+    <g stroke="#f59e0b" stroke-width="3" stroke-linecap="round">
+      <line x1="24" y1="4" x2="24" y2="10"/>
+      <line x1="24" y1="38" x2="24" y2="44"/>
+      <line x1="4" y1="24" x2="10" y2="24"/>
+      <line x1="38" y1="24" x2="44" y2="24"/>
+    </g>
+  </g>
+  <text x="138" y="103" font-family="Impact, 'Bebas Neue', 'Arial Narrow', sans-serif" font-size="38" font-weight="900" fill="#fafaf9" letter-spacing="2">SKOFFROAD</text>
+
+  <!-- eyebrow -->
+  <text x="70" y="200" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="20" fill="#f59e0b" letter-spacing="3" font-weight="600">v0.7.0 · OPEN SOURCE · GPL-3.0</text>
+
+  <!-- big title -->
+  <text x="70" y="310" font-family="Impact, 'Bebas Neue', 'Arial Narrow', sans-serif" font-size="140" font-weight="900" fill="#fafaf9" letter-spacing="-2">GET</text>
+  <text x="70" y="430" font-family="Impact, 'Bebas Neue', 'Arial Narrow', sans-serif" font-size="140" font-weight="900" fill="#f59e0b" letter-spacing="-2">MUDDY.</text>
+
+  <!-- tagline -->
+  <text x="70" y="490" font-family="'Inter', 'Helvetica Neue', sans-serif" font-size="26" fill="#d6d3d1" font-weight="500">A free, open-source off-road sandbox in Rust.</text>
+  <text x="70" y="525" font-family="'Inter', 'Helvetica Neue', sans-serif" font-size="22" fill="#a8a29e" font-weight="400">Procedural terrain · raycast suspension · 44 plugins of chaos.</text>
+
+  <!-- url badge -->
+  <g transform="translate(70, 555)">
+    <rect x="0" y="0" width="320" height="40" rx="20" fill="#1c1917" stroke="#f59e0b" stroke-width="2"/>
+    <text x="20" y="27" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="18" fill="#f59e0b" font-weight="600">→ skoffroad.skworld.io</text>
+  </g>
+
+  <!-- grain overlay -->
+  <rect width="1200" height="630" fill="#fafaf9" filter="url(#grain)" opacity="0.04"/>
+</svg>
