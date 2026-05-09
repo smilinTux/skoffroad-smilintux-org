@@ -4,11 +4,11 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>skoffroad — get muddy. (an open-source off-road sandbox)</title>
-<meta name="description" content="skoffroad is a free, open-source off-road sandbox built in Rust with Bevy and Avian3D. Procedural terrain, raycast suspension, weather, mud, ramps, and 44 plugins of chaos." />
+<meta name="description" content="skoffroad is a free, open-source off-road sandbox built in Rust with Bevy and Avian3D. Plays in your browser via WebAssembly, or download native builds for Linux, macOS, and Windows. Procedural terrain, raycast suspension, weather, mud, ramps, and 44 plugins of chaos." />
 
 <!-- Open Graph -->
-<meta property="og:title" content="skoffroad — get muddy." />
-<meta property="og:description" content="A free, open-source off-road sandbox in Rust. Procedural terrain, raycast suspension, 44 plugins of chaos." />
+<meta property="og:title" content="skoffroad — get muddy. (now in your browser)" />
+<meta property="og:description" content="A free, open-source off-road sandbox in Rust. Plays in your browser — no install. Or grab a native build for Linux, macOS, or Windows." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://skoffroad.skworld.io/" />
 <meta property="og:site_name" content="skoffroad" />
@@ -22,8 +22,8 @@
 
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="skoffroad — get muddy." />
-<meta name="twitter:description" content="A free, open-source off-road sandbox in Rust. Procedural terrain, raycast suspension, 44 plugins of chaos." />
+<meta name="twitter:title" content="skoffroad — get muddy. (now in your browser)" />
+<meta name="twitter:description" content="A free, open-source off-road sandbox in Rust. Plays in your browser — no install. Or grab a native build for Linux, macOS, or Windows." />
 <meta name="twitter:image" content="https://skoffroad.skworld.io/assets/og-card.png" />
 <meta name="twitter:image:alt" content="skoffroad — GET MUDDY. An open-source off-road sandbox in Rust." />
 
@@ -54,11 +54,12 @@
     <span class="brand-name">SKOFFROAD</span>
   </a>
   <nav class="nav-links">
+    <a href="#play">Play</a>
     <a href="#download">Download</a>
     <a href="#features">Features</a>
     <a href="#stack">Stack</a>
     <a href="#stats">Stats</a>
-    <a href="#play">Play</a>
+    <a href="#build">Build</a>
     <a class="nav-cta" href="https://github.com/smilinTux/skoffroad" target="_blank" rel="noopener">GitHub ↗</a>
   </nav>
 </header>
@@ -91,7 +92,7 @@
         Play in browser
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 4 20 12 6 20 6 4"/></svg>
       </a>
-      <a class="btn btn-ghost" href="#download">Download desktop ↓</a>
+      <a class="btn btn-ghost" href="#download">Download native ↓</a>
       <a class="btn btn-ghost" href="https://github.com/smilinTux/skoffroad" target="_blank" rel="noopener">GitHub ↗</a>
     </div>
     <div class="hero-meta">
@@ -160,6 +161,144 @@
   <div class="mud-splat splat-2" aria-hidden="true"></div>
 </section>
 
+<section id="play" class="section section-play-instant">
+  <div class="play-instant-card">
+    <div class="play-instant-content">
+      <span class="play-instant-badge">
+        <span class="play-instant-pulse" aria-hidden="true"></span>
+        new · WebAssembly build
+      </span>
+      <h2 class="play-instant-title">Play instantly. No install.</h2>
+      <p class="play-instant-tagline">
+        The full sandbox compiled to WebAssembly. One click, ~10&nbsp;MB,
+        and you're flinging mud — no Rust toolchain, no app store, no
+        download bar.
+      </p>
+      <div class="play-instant-cta">
+        <a class="btn btn-primary play-instant-btn" href="https://play.skoffroad.skworld.io" target="_blank" rel="noopener">
+          Launch skoffroad
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+        </a>
+        <a class="play-instant-link" href="#download">Or grab a native build ↓</a>
+      </div>
+      <ul class="play-instant-specs">
+        <li>
+          <span class="play-instant-spec-icon" aria-hidden="true">⚡</span>
+          <div>
+            <strong>Zero install</strong>
+            <span>Click → driving in seconds</span>
+          </div>
+        </li>
+        <li>
+          <span class="play-instant-spec-icon" aria-hidden="true">🌐</span>
+          <div>
+            <strong>WebGPU + WebGL2</strong>
+            <span>Chrome, Edge, Firefox, Safari 17+</span>
+          </div>
+        </li>
+        <li>
+          <span class="play-instant-spec-icon" aria-hidden="true">🛡️</span>
+          <div>
+            <strong>Sandboxed</strong>
+            <span>Saves to localStorage, runs offline after first load</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="play-instant-frame" aria-hidden="true">
+      <div class="play-instant-chrome">
+        <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+        <span class="play-instant-url">play.skoffroad.skworld.io</span>
+      </div>
+      <div class="play-instant-screen">
+        <div class="play-instant-sky"></div>
+        <svg class="play-instant-mountains" viewBox="0 0 400 100" preserveAspectRatio="none">
+          <path d="M0,70 L40,40 L80,55 L130,25 L180,50 L240,30 L300,55 L360,35 L400,50 L400,100 L0,100 Z" fill="#1f1409"/>
+        </svg>
+        <svg class="play-instant-jeep" viewBox="0 0 240 140">
+          <rect x="60" y="32" width="80" height="6" rx="2" fill="#0c0a09"/>
+          <circle cx="75" cy="35" r="2" fill="#fef3c7"/>
+          <circle cx="90" cy="35" r="2" fill="#fef3c7"/>
+          <circle cx="105" cy="35" r="2" fill="#fef3c7"/>
+          <circle cx="120" cy="35" r="2" fill="#fef3c7"/>
+          <rect x="30" y="55" width="170" height="40" rx="4" fill="#d97706"/>
+          <rect x="40" y="38" width="100" height="22" rx="3" fill="#d97706"/>
+          <polygon points="42,40 138,40 132,58 48,58" fill="#0c0a09" opacity="0.6"/>
+          <circle cx="195" cy="68" r="4" fill="#fef3c7"/>
+          <circle cx="195" cy="80" r="4" fill="#fef3c7"/>
+          <rect x="40" y="80" width="50" height="20" fill="#0c0a09"/>
+          <rect x="140" y="80" width="50" height="20" fill="#0c0a09"/>
+          <circle cx="65" cy="100" r="22" fill="#0c0a09"/>
+          <circle cx="65" cy="100" r="10" fill="#3f3f46"/>
+          <circle cx="165" cy="100" r="22" fill="#0c0a09"/>
+          <circle cx="165" cy="100" r="10" fill="#3f3f46"/>
+        </svg>
+        <div class="play-instant-hud">
+          <span class="play-instant-hud-fps">60 FPS</span>
+          <span class="play-instant-hud-speed">42 MPH</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <details class="webgpu-tip">
+    <summary>
+      <span class="webgpu-tip-icon" aria-hidden="true">⚡</span>
+      <span class="webgpu-tip-summary-text">
+        <strong>Bonus tip — enable WebGPU for much better performance</strong>
+        <span class="webgpu-tip-hint">Click to expand · per-browser instructions</span>
+      </span>
+      <span class="webgpu-tip-chev" aria-hidden="true">▾</span>
+    </summary>
+    <div class="webgpu-tip-body">
+      <p class="webgpu-tip-lead">
+        WebGPU has much higher limits than WebGL2 — when it's on, SSAO,
+        atmospheric scattering, and the Hanabi particle effects all just work.
+        Most modern Chromium browsers ship it disabled by default. Flip the
+        flag once and you're set.
+      </p>
+      <div class="webgpu-tip-grid">
+        <div class="webgpu-tip-card">
+          <h4><span class="webgpu-tip-browser">Brave</span></h4>
+          <ol>
+            <li>Open <code>brave://flags/#enable-unsafe-webgpu</code></li>
+            <li>Set the flag to <strong>Enabled</strong></li>
+            <li>Restart Brave</li>
+          </ol>
+        </div>
+        <div class="webgpu-tip-card">
+          <h4><span class="webgpu-tip-browser">Chrome / Edge</span></h4>
+          <ol>
+            <li>On by default in stable releases (113+ Chrome, 113+ Edge)</li>
+            <li>If disabled: <code>chrome://flags/#enable-unsafe-webgpu</code></li>
+            <li>Restart the browser</li>
+          </ol>
+        </div>
+        <div class="webgpu-tip-card">
+          <h4><span class="webgpu-tip-browser">Firefox</span></h4>
+          <ol>
+            <li>Open <code>about:config</code></li>
+            <li>Set <code>dom.webgpu.enabled</code> to <strong>true</strong></li>
+            <li>(Nightly recommended for full feature parity)</li>
+          </ol>
+        </div>
+        <div class="webgpu-tip-card">
+          <h4><span class="webgpu-tip-browser">Safari</span></h4>
+          <ol>
+            <li>Safari 17+ on macOS Sonoma / iOS 17 ships WebGPU</li>
+            <li>Develop menu → Feature Flags → enable <strong>WebGPU</strong></li>
+            <li>If no Develop menu: Settings → Advanced → "Show features for web developers"</li>
+          </ol>
+        </div>
+      </div>
+      <p class="webgpu-tip-note">
+        Don't want to fiddle? skoffroad falls back to WebGL2 automatically — you'll
+        still get the full sandbox, just with the heavier post-processing turned down.
+      </p>
+    </div>
+  </details>
+</section>
+
 <section id="download" class="section section-download">
   <div class="section-head">
     <span class="kicker">/00 · grab a build</span>
@@ -205,7 +344,7 @@
     </a>
   </div>
   <p class="download-note">
-    Prefer to compile yourself? <a href="#play">Build from source</a> — three commands, sixty seconds.
+    Prefer to compile yourself? <a href="#build">Build from source</a> — three commands, sixty seconds.
   </p>
 </section>
 
@@ -261,6 +400,11 @@
       <h3>Save anywhere</h3>
       <p>Three save slots, auto-save on exit, auto-load on launch. Settings persist between sessions.</p>
     </article>
+    <article class="feature">
+      <div class="feature-icon" aria-hidden="true">🌐</div>
+      <h3>Runs in your browser</h3>
+      <p>Same Rust engine, compiled to WebAssembly. WebGPU when available, WebGL2 fallback. ~10&nbsp;MB cold load.</p>
+    </article>
   </div>
 </section>
 
@@ -301,11 +445,11 @@
   </div>
 </section>
 
-<section id="play" class="section section-play">
+<section id="build" class="section section-play">
   <div class="section-head">
-    <span class="kicker">/03 · how to play</span>
+    <span class="kicker">/03 · build from source</span>
     <h2>Three commands. Zero friction.</h2>
-    <p>If you've got Rust installed, you're 60 seconds from mud-flinging.</p>
+    <p>If you've got Rust installed, you're 60 seconds from mud-flinging — locally, with whatever feature flags you want.</p>
   </div>
   <div class="code-block" role="region" aria-label="Quickstart commands">
     <div class="code-head">
