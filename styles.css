@@ -252,7 +252,7 @@ a { color: inherit; }
   filter: drop-shadow(0 18px 0 rgba(0,0,0,0.4));
   animation: bounce 1.2s ease-in-out infinite;
 }
-.hero-jeep svg { width: 100%; height: auto; display: block; }
+.hero-jeep svg, .hero-jeep img { width: 100%; height: auto; display: block; }
 
 @keyframes bounce {
   0%, 100% { transform: translateX(-50%) translateY(0) rotate(-1deg); }

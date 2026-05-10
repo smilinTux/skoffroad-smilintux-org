@@ -57,6 +57,19 @@
     }, { passive: true });
   }
 
+  // --- auto-fetch the latest release tag from GitHub and stamp it into
+  //     the eyebrow line. Falls back silently if the API is rate-limited
+  //     or offline, so the static copy stays sane.
+  fetch('https://api.github.com/repos/smilinTux/skoffroad/releases/latest', { cache: 'force-cache' })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (j) {
+      if (!j || !j.tag_name) return;
+      var el = document.getElementById('hero-eyebrow');
+      if (!el) return;
+      el.innerHTML = j.tag_name + ' · S&amp;K OFFROAD · plays in your browser · multiplayer · GPL-3.0';
+    })
+    .catch(function () { /* offline / rate-limited — keep static copy */ });
+
   // --- konami code: rainbow tires ---------------------------------------
   const konami = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
   let buf = [];
